@@ -1,8 +1,8 @@
 dia = int(input('Digite o dia do vencimento da conta a pagar: '))
 mes = int(input('Digite o mês do vencimento da conta a pagar: '))
 
-dia_agora = 4
-mes_agora = 4
+dia_agora = 4 # exemplo de um dia
+mes_agora = 4 # exempo do mês de abril
 
 tempo_restante = dia - dia_agora
 
