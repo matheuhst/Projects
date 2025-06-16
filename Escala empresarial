@@ -1,0 +1,51 @@
+escala = {}
+
+def adicionar_funcionario(nome):
+    if nome not in escala:
+        escala[nome] = {"hora_extra": False}
+        print(f"Funcionário {nome} adicionado.")
+    else:
+        print(f"Funcionário {nome} já está cadastrado.")
+
+def marcar_hora_extra(nome):
+    if nome not in escala:
+        print(f"Funcionário {nome} não encontrado.")
+        return
+
+    if escala[nome]["hora_extra"]:
+        print(f"{nome} já tem hora extra marcada. Não é possível adicionar novamente.")
+    else:
+        escala[nome]["hora_extra"] = True
+        print(f"Hora extra marcada para {nome}.")
+
+def mostrar_escala():
+    print("\nEscala dos funcionários:")
+    for nome, dados in escala.items():
+        status = "com hora extra" if dados["hora_extra"] else "sem hora extra"
+        print(f"- {nome}: {status}")
+    print()
+
+while True:
+    opcao = int(input('''Menu:
+[1] Adicionar funcionário
+[2] Marcar hora extra
+[3] Mostrar escala
+[4] Sair
+>>> '''))
+    if opcao == 1:
+        nome = str(input('Qual o nome do funcionário? ')).title()
+        adicionar_funcionario(nome)
+
+    elif opcao == 2:
+        nome = str(input('Qual o nome do funcionário? ')).title()
+        marcar_hora_extra(nome)
+
+    elif opcao == 3:
+        mostrar_escala()
+
+    elif opcao == 4:
+        print('Saindo do programa...')
+        break
+
+    else:
+        print('\033[91mOperação Inválida\033[m')
