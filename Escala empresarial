@@ -25,9 +25,9 @@ def mostrar_escala():
         print(f"- {nome}: {status}")
     print()
     
-print('=-' * 30)
-print(f'{"Escala Empresarial":^60}')
-print('=-' * 30)
+print('\033[91m=\033[94m-\033[m' * 30)
+print(f'{"\033[93mEscala Empresarial\033[m":^60}')
+print('\033[91m=\033[94m-\033[m' * 30)
 while True:
     print()
     opcao = int(input(f'''{"Adicionar funcionário":.<55}[1]
