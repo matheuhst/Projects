@@ -24,13 +24,16 @@ def mostrar_escala():
         status = "com hora extra" if dados["hora_extra"] else "sem hora extra"
         print(f"- {nome}: {status}")
     print()
-
+    
+print('=-' * 30)
+print(f'{"Escala Empresarial":^60}')
+print('=-' * 30)
 while True:
-    opcao = int(input('''Menu:
-[1] Adicionar funcionário
-[2] Marcar hora extra
-[3] Mostrar escala
-[4] Sair
+    print()
+    opcao = int(input(f'''{"Adicionar funcionário":.<55}[1]
+{"Marcar hora extra":.<55}[2]
+{"Mostrar escala":.<55}[3]
+{"Sair":.<55}[4]
 >>> '''))
     if opcao == 1:
         nome = str(input('Qual o nome do funcionário? ')).title()
